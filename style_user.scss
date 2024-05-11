@@ -3272,8 +3272,6 @@
     }
   }
 
-
-
   .agebox {
     max-width: 560px;
     margin: 0 auto 0;
@@ -3303,5 +3301,81 @@
       padding: 1em 1em 1em 2em !important;
     }
   }
+  
+#daynavi{
+  max-width: 100%;
+  display: flex;
+  border-bottom:1px solid #333;
+  margin:0px auto 40px;
+}
+  
+#daynavi li{
+  width:calc(100% / 7);
+  margin:0 0 0px;
+  text-align:center;
+  position:relative;
+  letter-spacing: -0.01rem;
+  line-height: 1;
+  font-weight: 600;
+}
+  
+#daynavi li a{
+  display:block;
+  color:#efefef;
+  padding:8px 0% 8px;
+  transition: all 0.7s ease 0s;
+}
+
+#daynavi li a:hover,
+#daynavi li a.current {
+  /*background-image: linear-gradient(90deg, rgba(50, 207, 137, 1), rgba(51, 189, 226, 1));*/
+  background:#333;
+	color:#efefef;
+}
+
+#daynavi li .month{
+  font-size:14px;
+  display:inline-block;
+  position: relative;
+  }
+  
+#daynavi li p{
+  font-size:14px;
+  }
+  
+#daynavi li .dotw{
+  font-size:12px;
+  display:inline-block;
+  width:70%;
+  margin-top:0.2em;
+  }
+
+@media screen and (max-width: 768px) {
+   #daynavi {
+    max-width:100%;
+    margin:0px auto 40px;
+  }
+  
+   #daynavi li .month{
+    font-size:13px;
+    }
+  
+   #daynavi li p{
+    font-size:13px;
+    }
+  
+   #daynavi li .dotw{
+    font-size:12px;
+    }
+}
+
+.satd{
+  color:blue;
+}
+
+.sund{
+  color:#ff0000;
+}
+  
 
 }
