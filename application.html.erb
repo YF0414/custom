@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= get_title_page(params[:controller]) %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/c9e6893f52.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('favi.png') %>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4L0XSN0X0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Q4L0XSN0X0');
+    </script>
+  </head>
+  <% if params[:role] === :store && params[:controller] != "store/sessions" %>
+    <body class="cm_background">
+      <div class="cm_shop_body">
+        <div id="container">
+          <%= render "store/layouts/navbar_store" %>
+          <div id="content">
+            <%= render "store/layouts/header_store" %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </body>
+  <% elsif params[:role] === :store && params[:controller] === "store/sessions" %>
+    <body class="cm_background">
+      <div class="cm_shop_body">
+        <%= yield %>
+      </div>
+    </body>
+  <% elsif params[:controller] === "admins/sessions" %>
+    <body class="cm_background">
+      <div class="cm_shop_body">
+        <%= yield %>
+      </div>
+    </body>
+  <% else %>
+    <body class="cm_user_body">
+      <div class="cm_user">
+        <div class="container">
+          <%= render "shared/side_left" %>
+          <div class="content">
+            <% if params[:controller] === "stores" %>
+              <%= render "shared/store_header" %>
+            <% else %>
+              <%= render "shared/header" %>
+            <% end %>
+            <%= yield %>
+            <%= render "shared/footer_menu" %>
+          </div>
+        </div>
+        <%= render "shared/footer" %>
+      </div>
+    </body>
+  <% end %>
+</html>
