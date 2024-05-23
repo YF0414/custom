@@ -1519,14 +1519,14 @@
 
     .footnav ul{
       max-width: 100%;
-      margin: 0 0 30px -30px;
+      margin: 0 0 30px -60px;
     }
 
     .footnav ul li {
       display: inline-block;
       padding: 10px 5px 10px 15px;
       font-size: 0.8rem;
-      width:43.5%;
+      width:47.5%;
       text-align: left;
       border-bottom: 1px dashed #333;
     }
@@ -1538,7 +1538,7 @@
       width: 4px;
       height: 8px;
       top: 0px;
-      margin-right: 0px;
+      margin-right: 5px;
       position: relative;
     }
 
@@ -1549,7 +1549,7 @@
       width: 4px;
       height: 8px;
       top: 0px;
-      margin-right: 0px;
+      margin-right: 5px;
       position: relative;
     }
   }
